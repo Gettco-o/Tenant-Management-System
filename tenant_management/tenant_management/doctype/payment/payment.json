@@ -12,7 +12,11 @@
   "amount_paid",
   "date",
   "mode",
-  "amended_from"
+  "amended_from",
+  "bill_period",
+  "agreement",
+  "bill_amount",
+  "bill_status"
  ],
  "fields": [
   {
@@ -66,12 +70,44 @@
    "print_hide": 1,
    "read_only": 1,
    "search_index": 1
+  },
+  {
+   "fetch_from": "bill.period",
+   "fieldname": "bill_period",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Bill Period",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "bill.agreement",
+   "fieldname": "agreement",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Agreement",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "bill.due_amount",
+   "fieldname": "bill_amount",
+   "fieldtype": "Currency",
+   "hidden": 1,
+   "label": "Bill Amount",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "bill.status",
+   "fieldname": "bill_status",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Bill Status",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-01-27 16:43:32.032237",
+ "modified": "2025-01-27 19:22:36.746698",
  "modified_by": "Administrator",
  "module": "Tenant Management",
  "name": "Payment",

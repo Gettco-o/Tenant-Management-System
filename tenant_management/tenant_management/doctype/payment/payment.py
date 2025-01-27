@@ -25,16 +25,17 @@ class Payment(Document):
 
 
 def update_bill_status(doc, method):
-    print("Bill status update is running please")
-    frappe.msgprint(f"Updating bill status: {doc.bill}")
+	print("Bill status update is running please")
+	frappe.msgprint(f"Updating bill status: {doc.bill}")
+
+	bill = frappe.get_doc("Billing", doc.bill)
     
-    bill = frappe.get_doc("Billing", doc.bill)
-    
-    if bill.status == "Unpaid":
-        bill.status = "Paid"
-        frappe.msgprint(f"Bill {bill.ref} updated successfully. New status: {bill.status}")
-    
-    elif bill.status == "Paid":
-            frappe.msgprint(f"Bill {bill.ref} already paid")
-    
-    bill.save()
+	if bill.status == "Unpaid":
+		bill.status = "Paid"
+		doc.bill_status = "Paid"
+		frappe.msgprint(f"Bill {bill.ref} updated successfully. New status: {bill.status}")
+
+	elif bill.status == "Paid":
+			frappe.throw(f"Bill {bill.ref} already paid")
+
+	bill.save()
