@@ -1,0 +1,104 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:house_tenant_name",
+ "creation": "2025-01-25 15:39:35.657702",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "house_tenant_name",
+  "email",
+  "phone",
+  "address",
+  "house_rented",
+  "monthly_rent"
+ ],
+ "fields": [
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Email",
+   "reqd": 1
+  },
+  {
+   "fieldname": "phone",
+   "fieldtype": "Phone",
+   "in_list_view": 1,
+   "label": "Phone",
+   "reqd": 1
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Address",
+   "reqd": 1
+  },
+  {
+   "fieldname": "house_rented",
+   "fieldtype": "Link",
+   "label": "House Rented",
+   "options": "House",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "house_rented.monthly_rent",
+   "fieldname": "monthly_rent",
+   "fieldtype": "Currency",
+   "label": "Monthly Rent",
+   "reqd": 1
+  },
+  {
+   "fieldname": "house_tenant_name",
+   "fieldtype": "Data",
+   "label": "House Tenant Name",
+   "reqd": 1,
+   "unique": 1
+  }, 
+  {
+    "fieldname": "agreement",
+    "fieldtype": "Table",
+    "label": "Agreement",
+    "options": "Rental Agreement",
+    "reqd": 1
+   }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-01-26 21:45:01.393277",
+ "modified_by": "Administrator",
+ "module": "Tenant Management",
+ "name": "House Tenant",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Agent",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}
