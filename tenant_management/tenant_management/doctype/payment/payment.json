@@ -11,7 +11,8 @@
   "tenant_name",
   "amount_paid",
   "date",
-  "mode"
+  "mode",
+  "amended_from"
  ],
  "fields": [
   {
@@ -55,11 +56,22 @@
    "label": "Mode",
    "options": "Cash\nTransfer",
    "reqd": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Payment",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
   }
  ],
  "index_web_pages_for_search": 1,
+ "is_submittable": 1,
  "links": [],
- "modified": "2025-01-27 16:12:13.659261",
+ "modified": "2025-01-27 16:43:32.032237",
  "modified_by": "Administrator",
  "module": "Tenant Management",
  "name": "Payment",

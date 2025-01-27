@@ -22,3 +22,19 @@ class Payment(Document):
 		current_date = datetime.now().strftime("%d%m%Y")
 		transaction_reference = f"PAY-{self.tenant_name}-{current_time}{current_date}"
 		return transaction_reference
+
+
+def update_bill_status(doc, method):
+    print("Bill status update is running please")
+    frappe.msgprint(f"Updating bill status: {doc.bill}")
+    
+    bill = frappe.get_doc("Billing", doc.bill)
+    
+    if bill.status == "Unpaid":
+        bill.status = "Paid"
+        frappe.msgprint(f"Bill {bill.ref} updated successfully. New status: {bill.status}")
+    
+    elif bill.status == "Paid":
+            frappe.msgprint(f"Bill {bill.ref} already paid")
+    
+    bill.save()

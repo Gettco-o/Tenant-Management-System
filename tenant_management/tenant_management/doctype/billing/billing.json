@@ -54,13 +54,13 @@
    "fieldname": "status",
    "fieldtype": "Select",
    "label": "Status",
-   "options": "Unpaid\npaid",
+   "options": "Unpaid\nPaid",
    "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-01-27 16:02:39.685129",
+ "modified": "2025-01-27 16:46:05.449247",
  "modified_by": "Administrator",
  "module": "Tenant Management",
  "name": "Billing",
