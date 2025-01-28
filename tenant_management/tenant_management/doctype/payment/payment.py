@@ -10,6 +10,7 @@ class Payment(Document):
 	def autoname(self):
 		if not self.ref:
 			self.ref = self.generate_transaction_reference()
+			self.bill_status = "Paid"
 
 
 
@@ -32,7 +33,6 @@ def update_bill_status(doc, method):
     
 	if bill.status == "Unpaid":
 		bill.status = "Paid"
-		doc.bill_status = "Paid"
 		frappe.msgprint(f"Bill {bill.ref} updated successfully. New status: {bill.status}")
 
 	elif bill.status == "Paid":
