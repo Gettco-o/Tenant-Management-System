@@ -10,7 +10,8 @@
   "house_name",
   "owner_name",
   "address",
-  "monthly_rent"
+  "monthly_rent",
+  "status"
  ],
  "fields": [
   {
@@ -40,11 +41,18 @@
    "fieldtype": "Link",
    "label": "Owner Name",
    "options": "House Owner"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Available\nTaken",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-01-28 21:48:15.501254",
+ "modified": "2025-01-30 19:52:34.956066",
  "modified_by": "Administrator",
  "module": "Tenant Management",
  "name": "House",

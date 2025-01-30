@@ -8,5 +8,8 @@ app_license = "mit"
 doc_events = {
     "Payment": {
         "on_submit": "tenant_management.tenant_management.doctype.payment.payment.update_bill_status"
+    },
+    "House Tenant": {
+        "on_update": "tenant_management.tenant_management.doctype.house_tenant.house_tenant.update_house_status"
     }
 }
